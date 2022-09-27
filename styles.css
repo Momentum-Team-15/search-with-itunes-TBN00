@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+}
+
+.input-search input {
+    margin-right: 5px;
+    width: 300px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    border-top: solid black 2px;
+}
+
+.audio-player{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+#search-results{
+    text-align: center;
+    margin: 30px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    
+}
+.results{
+    border: 2px black solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+}
