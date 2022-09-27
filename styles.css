@@ -14,7 +14,7 @@ form {
     border-top: solid black 2px;
 }
 
-.audio-player{
+#audio-player{
     display: flex;
     justify-content: center;
     margin-bottom: 10px;

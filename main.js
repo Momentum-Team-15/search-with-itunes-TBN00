@@ -15,20 +15,23 @@ function buildResults(itunesArray) {
         let picture = document.createElement('img')
         let title = document.createElement('h3')
         let artist = document.createElement('h4')
+        let audio = document.getElementById("audio-player")
         resultsDiv.classList.add("results");
 
-
+        audio.src = `${itunes.previewUrl}`
         picture.src = `${itunes.artworkUrl100}`
         title.innerText = `${itunes.trackName}`
         artist.innerText = `${itunes.artistName}`
-
-
 
         resultsDiv.appendChild(picture);
         resultsDiv.appendChild(title);
         resultsDiv.appendChild(artist);
         searchResults.appendChild(resultsDiv);
 
+
+        resultsDiv.addEventListener("click", (event) => {
+            audio.play();
+        })
 
     }
 }
