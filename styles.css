@@ -1,7 +1,9 @@
 h1 {
     text-align: center;
 }
-
+body{
+    background-color: lightgray;
+}
 .input-search input {
     margin-right: 5px;
     width: 300px;
@@ -14,7 +16,7 @@ form {
     border-top: solid black 2px;
 }
 
-#audio-player{
+#audio-container{
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
@@ -25,11 +27,20 @@ form {
     padding: 30px;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    
+
+}
+.resultsBorder{
+    border-bottom: 2px black solid;
+    border-right: 2px black solid;
+    border-radius: 5px;
 }
 .results{
-    border: 2px black solid;
     border-radius: 5px;
     padding: 5px;
     margin: 2px;
+    background-color: white;
+    user-select: none;
+}
+.hover{
+    background-color: lightgreen;
 }
