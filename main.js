@@ -4,8 +4,6 @@ let form = document.getElementById("form")
 //Declaring variables to hold search results and link to audio
 let searchResults = document.getElementById("search-results")
 let audio = document.getElementById("audio-player")
-
-
 let radioButtons = document.querySelectorAll('input[name="radioB"]');
 
 //Adding event listener to form to gather user input
@@ -14,11 +12,9 @@ form.addEventListener("submit", (event) => {
     let url = `https://itunes.apple.com/search?term=${search}`
     for (let radioButton of radioButtons){
         if (radioButton.checked){
-            url+= `&entity=${radioButton.value}`
+            url+= `&entity=song&attribute=${radioButton.value}&limit=20`
         }
     }
-
-
     event.preventDefault();
 
     //Using fetch function and user input to gather info from iTunes API
@@ -31,11 +27,15 @@ form.addEventListener("submit", (event) => {
             searchResults.innerText = '';
             //calling buildResults function to send search results to page
             buildResults(music.results);
+            console.log(music.results);
         })
 })
 
 //creation of function buildResults
 function buildResults(itunesArray) {
+    if (itunesArray.length === 0){
+        alert('No results, please try again');
+    } else {
     for (let itunes of itunesArray) {
         let resultsDiv = document.createElement('div')
         let picture = document.createElement('img')
@@ -77,4 +77,5 @@ function buildResults(itunesArray) {
 
 
     }
+}
 }
