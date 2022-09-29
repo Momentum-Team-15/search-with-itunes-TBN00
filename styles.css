@@ -1,9 +1,12 @@
 h1 {
+    font-family: sans-serif;
     text-align: center;
 }
-body{
-    background-color: lightgray;
+
+body {
+    background-color: rgb(143, 142, 142);
 }
+
 .input-search input {
     margin-right: 5px;
     width: 300px;
@@ -16,12 +19,13 @@ form {
     border-top: solid black 2px;
 }
 
-#audio-container{
+#audio-container {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
 }
-#search-results{
+
+#search-results {
     text-align: center;
     margin: 30px;
     padding: 30px;
@@ -29,18 +33,25 @@ form {
     grid-template-columns: 20% 20% 20% 20% 20%;
 
 }
-.resultsBorder{
+
+.resultsBorder {
     border-bottom: 2px black solid;
     border-right: 2px black solid;
     border-radius: 5px;
 }
-.results{
+
+.results {
     border-radius: 5px;
     padding: 5px;
     margin: 2px;
     background-color: white;
     user-select: none;
 }
-.hover{
+
+.hover {
     background-color: lightgreen;
+}
+
+.radio-buttons{
+    margin-right: 10px;
 }
