@@ -1,5 +1,4 @@
 h1 {
-    font-family: sans-serif;
     text-align: center;
 }
 
@@ -10,6 +9,10 @@ body {
 .input-search input {
     margin-right: 5px;
     width: 300px;
+}
+
+span {
+    font-family: 'Lucida Grande';
 }
 
 form {
@@ -52,6 +55,11 @@ form {
     background-color: lightgreen;
 }
 
-.radio-buttons{
+.radio-buttons {
     margin-right: 10px;
+}
+
+.textBorder {
+    border: solid black 1px;
+    border-radius: 5px;
 }

@@ -4,12 +4,15 @@ let form = document.getElementById("form")
 //Declaring variables to hold search results and link to audio
 let searchResults = document.getElementById("search-results")
 let audio = document.getElementById("audio-player")
+//Declaring variable for radio buttons
 let radioButtons = document.querySelectorAll('input[name="radioB"]');
 
 //Adding event listener to form to gather user input
 form.addEventListener("submit", (event) => {
     let search = input.value;
+    //Declaring base url that the search will add to
     let url = `https://itunes.apple.com/search?term=${search}`
+    //Execute a for of loop to check each radio button and get its value
     for (let radioButton of radioButtons){
         if (radioButton.checked){
             url+= `&entity=song&attribute=${radioButton.value}&limit=20`
@@ -41,12 +44,17 @@ function buildResults(itunesArray) {
         let picture = document.createElement('img')
         let title = document.createElement('h3')
         let artist = document.createElement('h4')
+        let album = document.createElement('h4')
+        title.classList.add('textBorder')
+        artist.classList.add('textBorder')
+        album.classList.add('textBorder')
         resultsDiv.classList.add("resultsBorder", "results");
 
 
         picture.src = `${itunes.artworkUrl100}`
-        title.innerText = `${itunes.trackName}`
-        artist.innerText = `${itunes.artistName}`
+        title.innerText = `Song: ${itunes.trackName}`
+        artist.innerText = `Artist: ${itunes.artistName}`
+        album.innerText = `Album: ${itunes.collectionName}`
 
         //Creating event listener on results to play song preview on click
         resultsDiv.addEventListener("click", (event) => {
@@ -59,7 +67,8 @@ function buildResults(itunesArray) {
         resultsDiv.appendChild(picture);
         resultsDiv.appendChild(title);
         resultsDiv.appendChild(artist);
-        searchResults.appendChild(resultsDiv)
+        resultsDiv.appendChild(album);
+        searchResults.appendChild(resultsDiv);
 
         //Adding event listeners on results to highlight songs
         resultsDiv.addEventListener("mouseover", (event) => {
