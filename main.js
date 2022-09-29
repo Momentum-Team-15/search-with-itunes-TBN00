@@ -14,7 +14,7 @@ form.addEventListener("submit", (event) => {
             return response.json()
         })
         .then(function (music) {
-            searchResults.innerHTML = '';
+            searchResults.innerText = '';
             buildResults(music.results);
         })
 })
